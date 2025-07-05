@@ -30,8 +30,8 @@ A secure and scalable web-based banking application built using Python and Djang
 
 > Add screenshots here if available  
 > Example:  
-> ![Home Page](screenshots/home.png)  
-> ![User Dashboard](screenshots/dashboard.png)
+> ![image](https://github.com/nandani3105/E-banking-management-system/blob/main/img.png)  
+> 
 
 ---
 
