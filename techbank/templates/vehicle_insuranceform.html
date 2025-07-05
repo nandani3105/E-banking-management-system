@@ -1,0 +1,123 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vehicle Insurance</title>
+    <link rel="stylesheet" href="/static/vehicle_insurance.css">
+</head>
+<body>
+    <nav>
+        <div class="navbar-brand">
+                <a href="home" class="navbar-logo">TECH <span>BANK</span></a>
+        </div>
+        <ul>
+            <li><a href="user_app">User Page</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/support">Support</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <header>
+            <h1>Vehicle Insurance Application</h1>
+            <p>Fill in the required details to insure your vehicle with TechBank.</p>
+        </header>
+
+        <form method="POST" enctype="multipart/form-data">
+            <!-- Add {% csrf_token %} if using Django -->
+            {% csrf_token %}
+            
+            <div class="form-group">
+                <label for="vehicleType">Vehicle Type:</label>
+                <select id="vehicleType" name="vehicleType" required>
+                    <option value="">-- Select Vehicle Type --</option>
+                    <option>Car</option>
+                    <option>Two-Wheeler</option>
+                    <option>Commercial Vehicle</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="manufacturer">Manufacturer:</label>
+                <input type="text" id="manufacturer" name="manufacturer" placeholder="e.g., Honda, Hyundai" required>
+            </div>
+
+            <div class="form-group">
+                <label for="model">Model:</label>
+                <input type="text" id="model" name="model" placeholder="e.g., Activa 6G, i20 Sportz" required>
+            </div>
+
+            <div class="form-group">
+                <label for="registration">Registration Number:</label>
+                <input type="text" id="registration" name="registration" placeholder="e.g., WB01AB1234" required>
+            </div>
+
+            <div class="form-group">
+                <label for="registrationYear">Year of Registration:</label>
+                <input type="number" id="registrationYear" name="registrationYear" min="1980" max="2025" required>
+            </div>
+
+            <div class="form-group">
+                <label for="fuelType">Fuel Type:</label>
+                <select id="fuelType" name="fuelType" required>
+                    <option value="">-- Select Fuel Type --</option>
+                    <option>Petrol</option>
+                    <option>Diesel</option>
+                    <option>Electric</option>
+                    <option>CNG</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="ownerName">Owner Name:</label>
+                <input type="text" id="ownerName" name="ownerName" required>
+            </div>
+
+            <div class="form-group">
+                <label for="aadhar">Aadhar Number:</label>
+                <input type="text" id="aadhar" name="aadhar" placeholder="12-digit Aadhar" required>
+            </div>
+            <!-- New Aadhar Card Photo upload -->
+            <div class="form-group">
+                <label for="aadharPhoto">Upload Aadhar Card Photo:</label>
+                <input type="file" id="aadharPhoto" name="aadharPhoto" accept="image/*" required>
+            </div>
+
+            <div class="form-group">
+                <label for="pan">PAN Number:</label>
+                <input type="text" id="pan" name="pan" placeholder="10-digit PAN" required>
+            </div>
+            <!-- New PAN Card Photo upload -->
+            <div class="form-group">
+                <label for="panPhoto">Upload PAN Card Photo:</label>
+                <input type="file" id="panPhoto" name="panPhoto" accept="image/*" required>
+            </div>
+
+            <div class="form-group">
+                <label for="vehiclePhoto">Upload Vehicle Photo:</label>
+                <input type="file" id="vehiclePhoto" name="vehiclePhoto" accept="image/*" required>
+            </div>
+
+            <div class="form-group">
+                <label for="insuranceType">Insurance Type:</label>
+                <select id="insuranceType" name="insuranceType" required>
+                    <option value="">-- Select Insurance Type --</option>
+                    <option>Third-Party</option>
+                    <option>Comprehensive</option>
+                    <option>Own Damage</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="duration">Coverage Duration (Years):</label>
+                <input type="number" id="duration" name="duration" min="1" max="5" required>
+            </div>
+
+            <button type="submit" class="submit-btn">Apply for Insurance</button>
+        </form>
+    </div>
+</body>
+<footer>
+    <p>&copy; 2025 TechBank Life Insurance Services</p>
+</footer>
+</html>

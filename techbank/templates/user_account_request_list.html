@@ -1,0 +1,235 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>User Account Requests</title>
+<link rel="stylesheet" href="#">
+<style>
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #f0f4f8;
+    padding: 20px;
+}
+.navbar {
+    background-color:#03045e;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:5px;
+    
+}
+
+.navbar-brand .navbar-logo {
+    font-size:25px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    padding-left: 10px;
+}
+
+.navbar-brand .navbar-logo span{
+    color:#00b4d8;
+}
+.navbar-menu {
+    list-style: none;
+    display: flex;
+    gap:20px;
+}
+
+.navbar-item {
+    margin-left: 30px;
+}
+
+.navbar-item a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    font-size:15px;
+}
+
+.navbar-item a:hover {
+    color: #e8f4f6;
+    text-decoration: underline;
+}
+/*footer*/
+footer {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    background-color:#03045e;
+    color: #fff;
+    text-align: center;
+    width: 100%;
+}
+.footer1 a {
+    color: #fff;
+    text-decoration: none;
+    font-size:15px;
+    font-weight:500;
+    padding: 20px 20px;
+}
+
+.footer2 span {
+    color: #fff;
+    font-size:20px;
+    font-weight:500;
+    text-decoration: none;
+    padding-top:20px ;
+}
+
+.search-container {
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.search-container form {
+    display: flex;
+    gap: 10px;
+}
+
+.search-container input[type="text"] {
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.search-container button {
+    padding: 8px 16px;
+    background-color: #003366;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.search-container button:hover {
+    background-color: #00509e;
+}
+.full-list-button {
+    padding: 8px 16px;
+    background-color: #003366;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    text-align: center;
+    line-height: 1.5;
+}
+
+.full-list-button:hover {
+    background-color: #00509e;
+}
+
+h1 {
+    text-align: center;
+    color: #003366;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 25px;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+th, td {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+th {
+    background: #003366;
+    color: #fff;
+}
+tr:hover {
+    background-color: #f1f1f1;
+}
+img {
+    max-height: 60px;
+}
+</style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-brand">
+                <a href="#" class="navbar-logo">TECH <span>BANK</span></a>
+        </div>
+        <ul class="navbar-menu">
+            <li><a href="Admin_page" style="text-decoration: none; color: #fff ; padding: 0px 30px;;">Admin</a></li>
+        </ul>
+    </nav>
+    <h1>User Account Requests</h1>
+    <div class="search-container">
+        <form method="GET" action="{% url 'get_user' %}">
+            <input type="text" name="email" placeholder="Search by Email" required>
+            <button type="submit">Search</button>
+            <a href="{% url 'user_account_request_list' %}" class="full-list-button">Full List</a>
+
+        </form>
+        
+    </div>
+
+
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Full Name</th>
+                <th>Email</th>
+                <th>Password</th>
+                <th>Phone</th>
+                <th>Nation</th>
+                <th>State</th>
+                <th>Pincode</th>
+                <th>Aadhar</th>
+                <th>PAN</th>
+                <th>Account Type</th>
+                <th>Photo</th>
+                <th>KYC Photo</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for user in account %}
+            <tr>
+                <td>{{ user.id }}</td>
+                <td>{{ user.fullname }}</td>
+                <td>{{ user.email }}</td>
+                <td>{{ user.password }}</td>
+                <td>{{ user.phone }}</td>
+                <td>{{ user.nation }}</td>
+                <td>{{ user.state }}</td>
+                <td>{{ user.pincode }}</td>
+                <td>{{ user.aadhar }}</td>
+                <td>{{ user.pan }}</td>
+                <td>{{ user.choose }}</td>
+                <td>
+                    {% if user.photo %}
+                        <img src="{{ user.photo.url }}" alt="Photo">
+                    {% else %}
+                        N/A
+                    {% endif %}
+                </td>
+                <td>
+                    {% if user.kyc_photo %}
+                        <img src="{{ user.kyc_photo.url }}" alt="KYC Photo">
+                    {% else %}
+                        N/A
+                    {% endif %}
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+<!-- <footer>
+    <div class="footer2">
+        <span>Created by <a>TECH BANK</a> | 2025 All rights reserved.</span>
+    </div>
+</footer> -->
+</html>

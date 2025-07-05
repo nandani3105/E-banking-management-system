@@ -1,0 +1,198 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<header>
+<head>
+<link rel="stylesheet" href="#">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Online Payment-Page</title>
+<style>
+/* Basic Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  background: linear-gradient(to right, #e0eafc, #cfdef3);
+  min-height: 100vh;
+}
+
+/* Navbar Styling */
+nav {
+    background: #004d66;
+    padding: 10px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-brand .navbar-logo {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.navbar-logo span {
+    color: #00b4d8;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    padding: 8px 12px;
+    transition: background 0.3s ease;
+}
+
+nav ul li a:hover {
+    /* background-color: #f3f5f7;
+    color: #000;
+    border-radius: 25px; */
+    color: #90e0ef;
+}
+   
+/* Form Container */
+.container {
+  max-width: 600px;
+  margin: 40px auto;
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  padding: 30px;
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 22px;
+  color: #333;
+}
+
+.inputBox {
+  margin-bottom: 20px;
+}
+
+.inputBox label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 8px;
+  color: #444;
+}
+
+.inputBox input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  font-size: 14px;
+  transition: border-color 0.3s;
+}
+
+.inputBox input:focus {
+  border-color: #1e90ff;
+}
+
+/* Flex row for date and button */
+.flex {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.sub {
+  display: flex;
+  align-items: flex-end;
+}
+
+.submit_btn {
+  background-color: #1e90ff;
+  color: white;
+  border: none;
+  padding: 10px 30px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.submit_btn:hover {
+  background-color: #0066cc;
+}
+
+.submit_btn a {
+  color: white;
+  text-decoration: none;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+}
+
+</style>
+</head>
+<nav>
+        <div class="navbar-brand">
+                <a href="home" class="navbar-logo">TECH <span>BANK</span></a>
+        </div>
+        <ul>
+            <li><a href="user_acount">Back</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/support">Support</a></li>
+        </ul>
+    </nav>
+</header>
+<body>
+    <div class="container">
+        <form method="POST" enctype="multipart/form-data">
+          {% csrf_token %}
+            <div class="row">
+                <div class="col">
+                    <h3 class="title">Enter your Transaction details</h3>
+                    <div class="inputBox">
+                        <label for="name">Full Name:</label>
+                        <input type="text" name="name" placeholder="Enter your full name" required>
+                    </div>
+                    <div class="inputBox">
+                        <label for="email">Email:</label>
+                        <input type="email" name="email" placeholder="Enter email address" required>
+                    </div>
+                    <div class="inputBox">
+                        <label for="IFSC">IFSC code</label>
+                        <input type="text"  name="IFSC" placeholder="Enter your IFSC  code" required>
+                    </div>
+                    <div class="inputBox">
+                        <label for="accnumber">Account number</label>
+                        <input type="text" name="accnumber" placeholder="Enter acc number" required>
+                    </div>
+                    
+                    <div class="inputBox">
+                        <label for="amount">Amount</label>
+                        <input type="text"  name="amount" placeholder="Enter Amount" required>
+                    </div>
+                    <div class="flex">
+                        <div class="inputBox">
+                            <label for="date">Date</label>
+                            <input type="datetime-local" name="date" placeholder="Enter date and time" required>
+                        </div>
+                        
+                    <button type="submit" class="submit-btn">submit</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

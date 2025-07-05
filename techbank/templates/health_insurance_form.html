@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Health Insurance Application Form</title>
+<style>
+  *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+body {
+  font-family: Arial, sans-serif;
+  background: #f0f8ff;
+  /* padding: 20px; */
+}
+/* Navbar */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #004d66;
+  color: white;
+  padding: 10px 30px;
+}
+
+.navbar-logo {
+  text-decoration: none;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.navbar-logo span {
+  color: #00e6e6;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 25px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+nav ul li a:hover {
+  color: #a0f1ff;
+}
+h2 {
+  margin: 10px;
+  text-align: center;
+  color: #003366;
+}
+form {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  max-width:610px;
+  margin: auto;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+label {
+  display: block;
+  margin-top: 10px;
+  font-weight: bold;
+}
+input, select, textarea {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+.section-title {
+  margin-top: 20px;
+  font-size: 18px;
+  color: #005580;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 5px;
+}
+button {
+  margin-top: 20px;
+  background: #005580;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+button:hover {
+  background: #004466;
+}
+</style>
+</head>
+<body>
+  <nav>
+    <div class="navbar-brand">
+        <a href="home" class="navbar-logo">TECH <span>BANK</span></a>
+    </div>
+    <ul>
+        <li><a href="user_app">User Page</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/support">Support</a></li>
+    </ul>
+  </nav>
+  <div class="container">
+    <h2>Health Insurance Application Form</h2>
+    <form method="POST" enctype="multipart/form-data">
+      {% csrf_token %}
+      <div class="section-title">1. Personal Information</div>
+      <label>Full Name</label>
+      <input type="text" name="fullname" required>
+
+      <label>Gender</label>
+      <select name="gender" required>
+        <option value="">-- Select Gender --</option>
+        <option>Male</option>
+        <option>Female</option>
+        <option>Other</option>
+      </select>
+
+      <label>Date of Birth</label>
+      <input type="date" name="dob"  placeholder="dd/mm/yyyy" required>
+
+      <label>Marital Status</label>
+      <select name="marital_status">
+        <option>Single</option>
+        <option>Married</option>
+        <option>Divorced</option>
+        <option>Widowed</option>
+      </select>
+
+      <label>Nationality</label>
+      <input type="text" name="nationality" required>
+
+      <div class="section-title">2. Contact Information</div>
+      <label>Phone Number</label>
+      <input type="tel" name="phone" required>
+
+      <label>Email Address</label>
+      <input type="email" name="email" required>
+
+      <label>Residential Address</label>
+      <textarea name="address" rows="3" required></textarea>
+
+      <div class="section-title">3. Identity Information</div>
+      <label>Government ID Type</label>
+      <select name="id_type" required>
+        <option>Aadhar</option>
+        <option>PAN</option>
+        <option>Passport</option>
+        <option>Driving License</option>
+      </select>
+
+      <label>ID Number</label>
+      <input type="text" name="id_number" required>
+
+      <div class="section-title">4. Nominee Details</div>
+      <label>Nominee Full Name</label>
+      <input type="text" name="nominee_name" required>
+
+      <label>Relationship to Applicant</label>
+      <input type="text" name="relationship" required>
+
+      <label>Nominee Contact Number</label>
+      <input type="tel" name="nominee_contact" required>
+
+      <div class="section-title">5. Select Your Plan</div>
+      <label>Choose Your Plan</label>
+      <select name="plan" required>
+        <option value="">-- Select a Plan --</option>
+        <option value="Individual Plan">
+          Individual Plan 
+        </option>
+        <option value="Family Plan">
+          Family Plan 
+        </option>
+        <option value="Senior Citizen Plan">
+          Senior Citizen Plan
+        </option>
+      </select>
+
+      <div class="section-title">6. Declaration</div>
+      <label>
+        <input type="checkbox" name="declaration" required>
+        I hereby declare that the information provided above is true and complete to the best of my knowledge.
+      </label>
+
+      <button type="submit" class="submit-btn">Submit Application</button>
+    </form>
+  </div>  
+</body>
+</html>

@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Net Banking Login</title>
+    <link rel="stylesheet" href="/static/net2.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-brand">
+                <a href="#" class="navbar-logo">TECH <span>BANK</span></a>
+        </div>
+        <ul class="navbar-menu">
+            <li><a href="user_app">User Page</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/support">Support</a></li>
+        </ul>
+    </nav>
+    <h1>Net Banking Login</h1>
+        <!-- Message block goes here -->
+    {% if messages %}
+    <ul>
+        {% for message in messages %}
+        <li style="color:red;">{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    <form method="POST">
+    {% csrf_token %}
+    <label for="phone">Phone No</label>
+    <input type="tel" id="phone" name="phone" required><br>
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required><br>
+    <button type="submit">Login</button>
+    </form>
+
+
+</body>
+<footer>
+    <div class="footer2">
+        <span>Created by <a>TECH BANK</a> | 2025 All rights reserved.</span>
+    </div>
+</footer>
+</html>

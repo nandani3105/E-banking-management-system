@@ -1,0 +1,112 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="{% static 'account_opening.css' %}">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Open New Account</title>
+</head>
+<body>
+  <nav>
+    <div class="navbar-brand">
+      <a href="#" class="navbar-logo">TECH <span>BANK</span></a>
+    </div>
+    <ul>
+      <li><a href="user_app">User Page</a></li>
+      <li><a href="/about">About</a></li>
+      <li><a href="/support">Support</a></li>
+    </ul>
+  </nav>
+  <main>
+    <div class="flex-wrapper"></div>
+      <div class="instructions">
+        <h2>How to Open an Account</h2>
+        <ol>
+          <li>Fill your personal details.</li>
+          <li>Enter your full address accurately.</li>
+          <li>Provide identity proof: Aadhar & PAN.</li>
+          <li>Capture a live photo for KYC verification.</li>
+          <li>Select your preferred account type.</li>
+          <li>Review your information and click Submit.</li>
+        </ol>
+        <p><strong>Note:</strong> Ensure all details are correct to avoid delays.</p>
+      </div>
+
+      <div class="container">
+      <h1>Open a New Account</h1>
+
+      <div class="tabs">
+        <button class="tab-button active" data-tab="personal">Personal Details</button>
+        <button class="tab-button" data-tab="address">Address</button>
+        <button class="tab-button" data-tab="identity">Identity Proof</button>
+        <button class="tab-button" data-tab="photo-tab">Photo Capture</button>
+        <button class="tab-button" data-tab="account">Account Type</button>
+      </div>
+
+      <form method="post" action="/create_acc_request" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        <div class="tab-content active" id="personal">
+          <label for="name">Full Name:</label>
+          <input type="text" id="name" name="fullname" required>
+
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required>
+
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" required>
+
+          <label for="phone">Phone Number:</label>
+          <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" required>
+        </div>
+
+        <div class="tab-content" id="address">
+          <label for="nation">Nation:</label>
+          <input type="text" id="nation" name="nation" required>
+
+          <label for="address">Address:</label>
+          <textarea id="address" name="address" rows="3" required></textarea>
+
+          <label for="state">State:</label>
+          <input type="text" id="state" name="state" required>
+
+          <label for="pincode">Pin Code:</label>
+          <input type="text" id="pincode" name="pincode" pattern="[0-9]{6}" required>
+        </div>
+
+        <div class="tab-content" id="identity">
+          <label for="aadhar">Aadhar Card Number:</label>
+          <input type="text" id="aadhar" name="aadhar" pattern="[0-9]{12}" required>
+
+          <label for="pan">PAN Card Number:</label>
+          <input type="text" id="pan" name="pan" pattern="[A-Z]{5}[0-9]{4}[A-Z]{1}" required>
+
+          <label for="photo">Upload Photo:</label>
+          <input type="file" id="photo" name="photo" accept="image/*" required>
+        </div>
+
+        <div id="photo-tab" class="tab-content">
+          <label>Click a Photo for KYC:</label><br>
+          <video id="video" autoplay playsinline></video>
+          <button type="button" id="captureBtn">Capture Photo</button>
+          <canvas id="canvas" style="display:none;"></canvas>
+          <input type="hidden" name="kyc_photo" id="kycPhotoData">
+        </div>
+
+        <div class="tab-content" id="account">
+          <label for="accountType">Account Type:</label>
+          <select id="accountType" name="choose" required>
+            <option>Savings</option>
+            <option>Current</option>
+          </select>
+        </div>
+
+      <button type="submit" class="submit-btn">submit</button>
+      </form>
+  </div>
+  </main>
+  <script src="{% static 'javascript/webcam-kyc.js' %}"></script>
+  <script src="{% static 'javascript/create_acc_user.js' %}"></script>
+</body>
+</html>

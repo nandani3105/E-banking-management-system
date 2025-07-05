@@ -1,0 +1,72 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Health Insurance Plans</title>
+    <link rel="stylesheet" href="/static/health.css">
+</head>
+<body>
+    <nav>
+        <div class="navbar-brand">
+                <a href="#" class="navbar-logo">TECH <span>BANK</span></a>
+        </div>
+        <ul>
+            <li><a href="user_app">User Page</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/support">Support</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <header>
+            <h1>Health Insurance Plans</h1>
+            <p class="subtitle">Affordable coverage for individuals, families, and senior citizens</p>
+        </header>
+
+        <section class="plans">
+            <div class="plan">
+                <h2>Individual Plan</h2>
+                <p>Ideal for single persons seeking basic medical coverage including doctor visits, hospitalization, and lab tests.</p>
+                <ul>
+                    <li>Coverage up to ₹5 Lakhs</li>
+                    <li>Free annual health checkups</li>
+                    <li>Cashless hospitalization</li>
+                </ul>
+                
+            </div>
+
+            <div class="plan">
+                <h2>Family Plan</h2>
+                <p>Best suited for nuclear or joint families, offering wide-ranging protection for all members under one plan.</p>
+                <ul>
+                    <li>Coverage up to ₹10 Lakhs</li>
+                    <li>Maternity and child care benefits</li>
+                    <li>24x7 support and emergency services</li>
+                </ul>
+                
+            </div>
+
+            <div class="plan">
+                <h2>Senior Citizen Plan</h2>
+                <p>Designed for individuals aged 60+, focusing on age-related illnesses and post-hospital care.</p>
+                <ul>
+                    <li>Coverage up to ₹7 Lakhs</li>
+                    <li>No pre-medical screening</li>
+                    <li>Home nursing and post-care support</li>
+                </ul>
+                
+            </div>
+        </section>
+        <div class="btn">
+            <a href="{% url 'health_insurance_form' %}" class="btn-link">Apply for Health Insurance</a>
+        </div>
+
+        
+    </div>
+</body>
+<footer>
+    <div class="footer2">
+        <span>Created by <a>TECH BANK</a> | 2025 All rights reserved.</span>
+    </div>
+</footer>
+</html>

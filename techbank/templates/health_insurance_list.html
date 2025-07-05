@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Submitted Applications</title>
+<link rel="stylesheet" href="#">
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background: #f8f9fa;
+    padding: 20px;
+}
+.navbar {
+    background-color:#03045e;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:5px;
+    
+}
+
+.navbar-brand .navbar-logo {
+    font-size:25px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    padding-left: 10px;
+}
+
+.navbar-brand .navbar-logo span{
+    color:#00b4d8;
+}
+.navbar-menu {
+    list-style: none;
+    display: flex;
+    gap:20px;
+}
+
+.navbar-menu {
+    margin-left: 30px;
+    padding-right: 30px;
+}
+
+.navbar-menu a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    font-size:15px;
+}
+
+.navbar-menu a:hover {
+    color: #e8f4f6;
+    /* text-decoration: underline; */
+}
+/*footer*/
+footer {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    background-color:#03045e;
+    color: #fff;
+    text-align: center;
+    width: 100%;
+    margin-top: 715px;
+}
+.footer1 a {
+    color: #fff;
+    text-decoration: none;
+    font-size:15px;
+    font-weight:500;
+    padding: 20px 20px;
+}
+
+.footer2 span {
+    color: #fff;
+    font-size:20px;
+    font-weight:500;
+    text-decoration: none;
+    padding-top:30px ;
+}
+
+h2 {
+    text-align: center;
+    color: #005580;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background: #fff;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+th {
+    background-color: #005580;
+    color: white;
+}
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+</style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-brand">
+                <a href="#" class="navbar-logo">TECH <span>BANK</span></a>
+        </div>
+        <ul class="navbar-menu">
+            <li><a href="Admin_page">Admin </a></li>
+        </ul>
+    </nav>
+    <h2>All Health Insurance Applications</h2>
+
+    <table>
+        <thead>
+        <tr>
+            <th>Full Name</th>
+            <th>Gender</th>
+            <th>DOB</th>
+            <th>Phone</th>
+            <th>Email</th>
+            <th>Plan</th>
+            <th>Submitted</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for hlt in health_applications %}
+        <tr>
+            <td>{{ hlt.fullname }}</td>
+            <td>{{ hlt.gender }}</td>
+            <td>{{ hlt.dob }}</td>
+            <td>{{ hlt.phone }}</td>
+            <td>{{ hlt.email }}</td>
+            <td>{{ hlt.plan }}</td>
+            <td>{{ hlt.submitted_at }}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</body>
+<!-- <footer>
+    <div class="footer2">
+        <span>Created by <a>TECH BANK</a> | 2025 All rights reserved.</span>
+    </div>
+</footer> -->
+</html>

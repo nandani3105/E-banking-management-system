@@ -1,0 +1,73 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Life Insurance Plans</title>
+    <link rel="stylesheet" href="/static/life_insurance.css">
+</head>
+<body>
+    <nav>
+        <div class="navbar-brand">
+                <a href="home" class="navbar-logo">TECH <span>BANK</span></a>
+        </div>
+        <ul>
+            <li><a href="user_app">User Page</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/support">Support</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <header>
+            <h1>Life Insurance Plans</h1>
+            <p class="subtitle">Secure your future and protect your loved ones with the right life insurance plan.</p>
+        </header>
+
+        <section class="plans">
+            <div class="plan">
+                <h2>Term Insurance</h2>
+                <p>Provides high life cover at affordable premiums for a fixed term.</p>
+                <ul>
+                    <li>Coverage up to ₹1 Crore or more</li>
+                    <li>Affordable monthly premiums</li>
+                    <li>Option for critical illness rider</li>
+                    <li>Tax benefits under Section 80C</li>
+                </ul>
+            </div>
+
+            <div class="plan">
+                <h2>Whole Life Policy</h2>
+                <p>Coverage for your entire life with guaranteed benefits and savings.</p>
+                <ul>
+                    <li>Lifetime coverage (up to age 99 or 100)</li>
+                    <li>Guaranteed maturity benefits</li>
+                    <li>Premium payment flexibility</li>
+                    <li>Loan facility against policy</li>
+                </ul>
+            </div>
+
+            <div class="plan">
+                <h2>ULIP (Unit Linked Insurance Plan)</h2>
+                <p>Insurance + Investment plan with market-linked returns.</p>
+                <ul>
+                    <li>Diversified fund options (equity, debt, balanced)</li>
+                    <li>Flexible fund switching</li>
+                    <li>Life cover plus wealth creation</li>
+                    <li>Partial withdrawal allowed after lock-in</li>
+                </ul>
+            </div>
+        </section>
+
+        <div class="apply-btn">
+            <button><a href="{% url 'life_insurance_form' %}" class="apply-btn-link">Apply for Health Insurance</a></button>
+        </div>
+
+        
+    </div>
+</body>
+<footer>
+    <div class="footer2">
+        <span>Created by <a>TECH BANK</a> | 2025 All rights reserved.</span>
+    </div>
+</footer>
+</html>

@@ -1,0 +1,235 @@
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* nabbar and footer */
+.navbar {
+    background-color:#03045e;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:5px;
+    
+}
+
+.navbar-brand .navbar-logo {
+    font-size:25px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    padding-left: 50px;
+}
+
+.navbar-brand .navbar-logo span{
+    color:#00b4d8;
+}
+.navbar-menu {
+    list-style: none;
+    display: flex;
+}
+
+.navbar-item {
+    margin-left: 30px;
+    padding: 10px 10px;
+}
+
+.navbar-item a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    font-size:15px;
+}
+
+.navbar-item a:hover {
+    color: #90e0ef;
+    /* text-decoration: underline; */
+}
+footer {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    background-color:#03045e;
+    color: #fff;
+    text-align: center;
+    width: 100%;
+}
+.footer1 a {
+    color: #fff;
+    text-decoration: none;
+    font-size:15px;
+    font-weight:500;
+    padding: 20px 20px;
+}
+
+.footer2 span {
+    color: #fff;
+    font-size:20px;
+    font-weight:500;
+    text-decoration: none;
+    padding-top:20px ;
+}
+
+/* body design */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}   
+
+.main {
+    display: flex;
+    min-height:98vh;
+    width: 100%;
+}
+
+.left-image {
+    flex: 1;
+    background-image: url(home.jpg); /* Adjust path as needed */
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    background-repeat: no-repeat;
+    border: 5px solid #00b4d8;
+}
+
+.hero {
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    backdrop-filter: blur(5px); /* optional for a modern frosted effect */
+    /* border-radius: 20px;
+    margin: 20px; */
+}
+
+.hero h1{ 
+    font-family: 'Martel Sans', sans-serif;
+    font-weight: bolder;
+    font-size: 80px;
+    text-align: center;
+    justify-content: center;
+    text-transform: uppercase;
+    color:#000
+}
+.hero h1 span{
+     font-size: 80px;
+     color:#00b4d8;
+     font-weight: bolder;
+}
+.hero span{
+    font-weight: 400;
+    font-size:20px;
+    text-align: center;
+    color:#000
+}
+
+.hero h2{ 
+    color:#000000
+}
+.scroll-container {
+  width: 100%;
+  margin-bottom: 40px; /* adds spacing between marquee and next section */
+  font-size: 18px;
+  color: #000;
+  font-weight: 500;
+}
+
+.scroll-text {
+  display: inline-block;
+  white-space: nowrap;
+  position: absolute;
+  animation: scroll-left 15s linear infinite;
+  font-size:20px;
+  color: #000;
+}
+
+/* Animation keyframes */
+@keyframes scroll-left {
+  0% {
+    left: 100%;
+  }
+  100% {
+    left: -100%;
+  }
+}
+
+.hero h3 span{
+     font-size: 40px;
+     color:#00b4d8;
+     font-weight: bolder;
+}
+
+/*Service Section CSS*/
+
+.services {
+  margin-top:10px;
+  padding: 20px;
+}
+
+.services h3 {
+  font-size: 28px;
+  color: #03045e;
+  margin-bottom: 25px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns */
+  gap: 25px;
+  max-width: 1100px;
+  margin: auto;
+  padding: 10px;
+}
+
+.service-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(to right,#00c6ff, #5165cd);
+  text-decoration: none;
+  padding: 30px 20px;
+  border-radius: 20px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+  color: #03045e;
+  text-align: center;
+}
+
+.service-card i {
+  font-size: 30px;
+  margin-bottom: 15px;
+  color: #0077b6;
+}
+
+.service-card span {
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(to right, #00b4d8, #48cae4);
+  color:#fff;
+}
+
+@media (max-width: 768px) {
+  .service-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 500px) {
+  .service-grid {
+    grid-template-columns: 1fr;
+  }
+}

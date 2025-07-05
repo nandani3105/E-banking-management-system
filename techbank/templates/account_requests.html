@@ -1,0 +1,76 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pending Account Requests</title>
+    <link rel="stylesheet" href="">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            padding: 40px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        .request {
+            border-bottom: 1px solid #ccc;
+            padding: 15px 0;
+        }
+
+        .request:last-child {
+            border-bottom: none;
+        }
+
+        .request p {
+            margin: 5px 0;
+        }
+
+        .approve-btn {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 8px 16px;
+            background: #28a745;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 6px;
+        }
+
+        .approve-btn:hover {
+            background: #218838;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Pending Account Requests</h1>
+
+        {% if requests %}
+            {% for request in requests %}
+                <div class="request">
+                    <h3>{{ request.fullname }}</h3>
+                    <p><strong>Email:</strong> {{ request.email }}</p>
+                    <p><strong>Phone:</strong> {{ request.phone }}</p>
+                    <p><strong>Account Type:</strong> {{ request.choose }}</p>
+                    <a href="{% url 'approve_request' request.id %}" class="approve-btn">Approve</a>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>No pending account requests.</p>
+        {% endif %}
+    </div>
+</body>
+</html>

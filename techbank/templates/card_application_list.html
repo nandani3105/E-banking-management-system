@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Card Applications</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #eef2f3;
+            padding: 20px;
+        }
+        .navbar {
+    background-color:#03045e;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:5px;
+    
+}
+
+.navbar-brand .navbar-logo {
+    font-size:25px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    padding-left: 10px;
+}
+
+.navbar-brand .navbar-logo span{
+    color:#00b4d8;
+}
+.navbar-menu {
+    list-style: none;
+    display: flex;
+    gap:20px;
+}
+
+.navbar-menu {
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+.navbar-menu a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    font-size:15px;
+}
+
+.navbar-menu a:hover {
+    color: #e8f4f6;
+    text-decoration: underline;
+}
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #ffffff;
+        }
+        th, td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #03045e;
+            color: white;
+        }
+        h1 {
+            color: #03045e;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-brand">
+                <a href="#" class="navbar-logo">TECH <span>BANK</span></a>
+        </div>
+        <ul class="navbar-menu">
+            <li><a href="Admin_page">Admin </a></li>
+        </ul>
+    </nav>
+    <h1>Submitted Card Applications</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>DOB</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Address</th>
+                <th>Employment</th>
+                <th>Income</th>
+                <th>Card Type</th>
+                <th>ID Proof</th>
+                <th>Address Proof</th>
+                <th>Submitted At</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for cd in card_app %}
+            <tr>
+                <td>{{ cd.name }}</td>
+                <td>{{ cd.dob }}</td>
+                <td>{{ cd.email }}</td>
+                <td>{{ cd.phone }}</td>
+                <td>{{ cd.address }}</td>
+                <td>{{ cd.employment_status }}</td>
+                <td>{{ cd.annual_income }}</td>
+                <td>{{ cd.card_type }}</td>
+                <td><a href="{{ app.id_proof.url }}" target="_blank">View</a></td>
+                <td><a href="{{ app.address_proof.url }}" target="_blank">View</a></td>
+                <td>{{ cd.submitted_at }}</td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="11">No applications found.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

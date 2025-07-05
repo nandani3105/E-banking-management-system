@@ -1,0 +1,149 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Currency Exchange</title>
+  <link rel="stylesheet" href="currency_exchange.css" />
+  <style>
+    body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(to bottom right, #e0f7fa, #80deea);
+  margin: 0;
+  padding: 0;
+}
+/*footer*/
+/* footer {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    background-color:#03045e;
+    color: #fff;
+    text-align: center;
+    width: 100%;
+}
+.footer1 a {
+    color: #fff;
+    text-decoration: none;
+    font-size:15px;
+    font-weight:500;
+    padding: 20px 20px;
+}
+
+.footer2 span {
+    color: #fff;
+    font-size:20px;
+    font-weight:500;
+    text-decoration: none;
+    padding-top:20px ;
+} */
+
+
+.currency-container {
+  max-width:600px;
+  margin: 50px auto;
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.currency-container h2 {
+  text-align: center;
+  color: #004d40;
+  margin-bottom: 20px;
+}
+
+.currency-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.currency-table th, .currency-table td {
+  border: 1px solid #ccc;
+  padding: 12px;
+  text-align: center;
+}
+
+.currency-table th {
+  background-color: #b2ebf2;
+  color: #006064;
+}
+
+.currency-table tr:nth-child(even) {
+  background-color: #f0f0f0;
+}
+
+.currency-convert {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.currency-convert input,
+.currency-convert select {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.currency-convert button {
+  padding: 10px;
+  background-color: #0097a7;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.currency-convert button:hover {
+  background-color: #006064;
+}
+
+  </style>
+</head>
+<body>
+  <div class="currency-container">
+    <h2>Currency Exchange Rates</h2>
+    <table class="currency-table">
+      <tr>
+        <th>Currency</th>
+        <th>Exchange Rate (INR)</th>
+      </tr>
+      <tr>
+        <td>USD</td>
+        <td>83.10</td>
+      </tr>
+      <tr>
+        <td>EUR</td>
+        <td>89.75</td>
+      </tr>
+      <tr>
+        <td>GBP</td>
+        <td>104.60</td>
+      </tr>
+    </table>
+
+    <div class="currency-convert">
+      <label>Convert Currency</label>
+      <input type="number" placeholder="Amount in INR" />
+      <select>
+        <option value="usd">USD</option>
+        <option value="eur">EUR</option>
+        <option value="gbp">GBP</option>
+      </select>
+      <button>Convert</button>
+    </div>
+  </div>
+</body>
+<!-- <footer>
+    <div class="footer2">
+        <span>Created by <a>TECH BANK</a> | 2025 All rights reserved.</span>
+    </div>
+</footer> -->
+</html>

@@ -1,0 +1,75 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Card Apply</title>
+  <link rel="stylesheet" href="/static/apply_card.css" />
+</head>
+<body>
+  <nav>
+        <div class="navbar-brand">
+                <a href="#" class="navbar-logo">TECH <span>BANK</span></a>
+        </div>
+        <ul>
+            <li><a href="user_app">User Page</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/support">Support</a></li>
+        </ul>
+    </nav>
+  <div class="card-apply-container">
+    <h2>Apply for a Credit/Debit Card</h2>
+    <form class="card-apply-form" method="POST" enctype="multipart/form-data">
+      {% csrf_token %}
+      <label for="name">Full Name</label>
+      <input type="text" id="name" name="name" required />
+
+      <label for="dob">Date of Birth</label>
+      <input type="date" id="dob" name="dob" required />
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required />
+
+      <label for="phone">Phone Number</label>
+      <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" placeholder="10-digit number" required />
+
+      <label for="address">Residential Address</label>
+      <textarea id="address" name="address" rows="3" required></textarea>
+
+      <label for="employment-status">Employment Status</label>
+      <select id="employment-status" name="employment-status" required>
+        <option value="">-- Select Employment Status --</option>
+        <option value="employed">Employed</option>
+        <option value="self-employed">Self-employed</option>
+        <option value="student">Student</option>
+        <option value="unemployed">Unemployed</option>
+        <option value="retired">Retired</option>
+      </select>
+
+      <label for="annual-income">Annual Income (in INR)</label>
+      <input type="number" id="annual-income" name="annual-income" min="0" step="1000" required />
+
+      <label for="card-type">Card Type</label>
+      <select id="card-type" name="card-type" required>
+        <option value="">-- Select Card Type --</option>
+        <option value="credit">Credit Card</option>
+        <option value="debit">Debit Card</option>
+      </select>
+
+      <label for="id-proof">Upload ID Proof (Aadhar/PAN/Passport)</label>
+      <input type="file" id="id-proof" name="id-proof" accept="image/*,.pdf" required />
+
+      <label for="address-proof">Upload Address Proof (Utility Bill/Bank Statement)</label>
+      <input type="file" id="address-proof" name="address-proof" accept="image/*,.pdf" required />
+
+      <button type="submit">Submit Application</button>
+    </form>
+  </div>
+</body>
+<footer>
+    <div class="footer2">
+        <span>Created by <a>TECH BANK</a> | 2025 All rights reserved.</span>
+    </div>
+</footer>
+</html>

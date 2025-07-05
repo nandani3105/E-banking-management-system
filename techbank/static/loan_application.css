@@ -1,0 +1,172 @@
+/* Reset and base layout */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to right, #c5d0e5, #b4e3de);
+    min-height: 100vh;
+    color: #333;
+}
+
+/* nabbar and footer */
+.navbar {
+    background-color:#03045e;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:10px 30px;
+    
+}
+
+.navbar-brand .navbar-logo {
+    font-size:25px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    padding-left: 10px;
+}
+
+.navbar-brand .navbar-logo span{
+    color:#00b4d8;
+}
+.navbar-menu {
+    list-style: none;
+    display: flex;
+    gap:20px;
+}
+
+.navbar-menu {
+    margin-left: 30px;
+}
+
+.navbar-menu a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    font-size:15px;
+}
+
+.navbar-menu a:hover {
+    color: #00b4d8;
+    /* text-decoration: underline; */
+}
+/*footer*/
+footer {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    background-color:#03045e;
+    color: #fff;
+    text-align: center;
+    width: 100%;
+    padding: 10px 20px;
+}
+.footer1 a {
+    color: #fff;
+    text-decoration: none;
+    font-size:15px;
+    font-weight:500;
+    padding: 20px 20px;
+}
+
+.footer2 span {
+    color: #fff;
+    font-size:20px;
+    font-weight:500;
+    text-decoration: none;
+    padding-top:20px ;
+}
+
+
+/* Form container */
+.form-container {
+    min-height: 600px;
+    max-width: 600px;
+    margin: 30px auto;
+    background-color: #ffffff;
+    padding: 30px 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.5s ease;
+}
+
+h1 {
+    text-align: center;
+    color: #0f3557;
+    margin-bottom: 10px;
+}
+
+p {
+    text-align: center;
+    color: #666;
+    font-size: 15px;
+    margin-bottom: 30px;
+}
+
+/* Form fields */
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #222;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="file"],
+select {
+    width: 100%;
+    padding: 12px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    transition: border-color 0.3s;
+}
+
+input:focus,
+select:focus {
+    border-color: #0f3557;
+    outline: none;
+}
+
+/* Submit button */
+.submit-btn {
+    width: 100%;
+    background: linear-gradient(to right, #0f3557, #4fc3f7);
+    color: white;
+    border: none;
+    padding: 14px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.submit-btn:hover {
+    background: linear-gradient(to right, #4fc3f7, #0f3557);
+    transform: scale(1.03);
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

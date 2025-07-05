@@ -1,0 +1,155 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tech Bank Admin Dashboard</title>
+    <link rel="stylesheet" href="{% static 'admin_dashboard.css' %}">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #ced1d4fd;
+            margin: 0;
+            padding: 0;
+        }
+        .navbar {
+            background-color: #03045e;
+            color: white;
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .navbar-brand {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .navbar-brand span {
+            color:#00b4d8;
+        }
+        .menu-items a {
+             color: #fff;
+             text-decoration: none;
+             font-weight: 500;
+             font-size:15px;
+}
+        .menu-items a:hover {
+            color: #90e0ef;
+        }
+        .dashboard-container {
+            padding: 40px;
+        }
+        .dashboard-header {
+            font-size: 28px;
+            color: #fc2389;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        .card-grid {
+             max-width: 1000px;
+             margin: auto;
+             padding: 10px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        .card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+            padding: 20px;
+            text-align: center;
+        }
+        .card:hover {
+           transition: all 0.5s ease-in-out;
+           transform: translateY(-7px);
+           box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+           background: linear-gradient(to right, #00b4d8, #7d29fa);
+           color:#fff;
+       }
+        .card h2 {
+            font-size: 22px;
+            color: #023e8a;
+        }
+        .card p {
+            font-size: 32px;
+            color: #0077b6;
+        }
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #03045e;
+            color: white;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+        a.manage-link {
+            text-decoration: none;
+            color: #0077b6;
+            display: inline-block;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="navbar">
+        <div class="navbar-brand">TECH <span>BANK</span> - Admin</div>
+        <div class="menu-items">
+            <a href="#">Home</a> |
+            <a href="/">Logout</a>
+        </div>
+    </div>
+
+    <div class="dashboard-container">
+        <div class="dashboard-header">Admin Dashboard</div>
+
+        <div class="card-grid">
+            <div class="card">
+                <h2>Total Users</h2>
+                
+                <a href="{% url 'user_account_request_list' %}" class="btn-link">Manage Users</a>
+            </div>
+            <div class="card">
+                <h2>Loan Applications</h2>
+                <a href="{% url 'loan_application_list' %}" class="btn-link">View Loans</a>
+            </div>
+            <div class="card">
+                <h2>All Transactions</h2>
+                <a href="{% url 'transaction_list' %}" class="btn-link">View Transactions</a>
+            </div>
+            <div class="card">
+                <h2>Life Insurance</h2>
+                <a href="{% url 'life_insurance_list' %}" class="btn-link">View Life Insurance</a>
+            </div>
+            <div class="card">
+                <h2>Health insurance</h2>
+                <a href="{% url 'health_insurance_list' %}" class="btn-link">View Health insurance</a>
+            </div>
+            <div class="card">
+                <h2>Vehicle insurance</h2>
+                <a href="{% url 'vehicle_insurance_list' %}" class="btn-link">View Vehicle insurance</a>
+            </div>
+            <div class="card">
+                <h2>Card Apply</h2>
+                <a href="{% url 'card_application_list' %}" class="btn-link">View Card Apply</a>
+                
+            </div>
+            <div class="card">
+                <h2> Support Requests</h2>
+                <a href="{% url 'support' %}" class="btn-link">View Support</a>
+            </div>
+            <div class="card">
+                <h2> Account Requests</h2>
+                <a href="account_requests" class="btn-link">View Support</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        &copy; 2025 TECH BANK | Admin Portal
+    </div>
+
+</body>
+</html>

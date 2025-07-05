@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Success</title>
+  <link rel="stylesheet" href="{% static 'success.css' %}" />
+</head>
+<body>
+  <div class="centered-container">
+    <h1>Request Registered</h1>
+    <h2>Wait for varification</h2>
+    <p>Request ID: {{ account.id }}</p>
+    <p>Full Name: {{ account.fullname }}</p>
+    <p>Email:{{ account.email}}</p>
+  </div>
+  <script>
+    history.replaceState(null, '', location.href);
+    window.addEventListener('popstate', function () {
+      window.location.href = '/user_app';  // Update to your actual home URL
+    });
+  </script>
+</body>
+<footer>
+    <div class="footer2">
+        <span>Created by <a>TECH BANK</a> | 2025 All rights reserved.</span>
+    </div>
+</footer>
+</html>

@@ -1,0 +1,249 @@
+/* Global Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  min-height: 100vh;
+  overflow: hidden;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #c0cdda, #ffffff);
+}
+
+/* Navbar */
+nav {
+  width: 100%;
+  background-color: #004d66;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  height: 60px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+
+.navbar-logo {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 24px;
+}
+
+.navbar-logo span {
+  color: #00e6e6;
+}
+
+.navbar-logo:hover {
+  color: #a5b4fc;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+nav ul li a:hover {
+  color: #a0f1ff;
+}
+
+/* Layout Wrapper */
+main {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
+  width: 100%;
+  padding: 100px 40px 40px; /* top padding accounts for navbar */
+  max-width: 1400px;
+  overflow: hidden;
+}
+
+/* Instructions Panel */
+.instructions {
+  flex: 0 0 300px;
+  background-color: #f4f8fb;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  font-size: 15px;
+  line-height: 1.6;
+  color: #004d66;
+  height: fit-content;
+}
+
+.instructions h2 {
+  margin-bottom: 15px;
+  font-size: 18px;
+  color: #005580;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 5px;
+}
+
+/* Main Form Container */
+.container {
+  flex: 1;
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  max-height: calc(100vh - 120px); /* fit within screen */
+  overflow-y: auto;
+}
+
+h1 {
+  text-align: center;
+  color: #222;
+  margin-bottom: 25px;
+}
+
+/* Tabs */
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+  gap: 10px;
+}
+
+.tab-button {
+  flex: 1;
+  padding: 10px 16px;
+  background: #eee;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+  font-weight: 600;
+  border-radius: 6px;
+  color: #333;
+  text-align: center;
+}
+
+.tab-button:hover,
+.tab-button.active {
+  background: #4f46e5;
+  color: white;
+}
+
+.tab-content {
+  display: none;
+  border-top: 2px solid #4f46e5;
+  padding-top: 20px;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+/* Form Styling */
+form {
+  background-color: #ffffff;
+  padding: 30px 40px;
+  border-radius: 12px;
+}
+
+label {
+  display: block;
+  margin-top: 15px;
+  font-weight: 500;
+  color: #444;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"]
+input[type="tel"],
+input[type="file"],
+select,
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 6px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-sizing: border-box;
+  transition: border 0.3s ease;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: #4f46e5;
+  outline: none;
+}
+
+/* Buttons */
+button,
+#captureBtn {
+  margin-top: 15px;
+  padding: 10px 20px;
+  background-color: #0066cc;
+  color: white;
+  cursor: pointer;
+  border: 2px solid #333;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+button:hover,
+#captureBtn:hover {
+  background-color: #3730a3;
+}
+
+/* Webcam Preview */
+video, canvas {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 8px;
+  display: block;
+  margin: 10px auto;
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+  main {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 100px 20px 20px;
+  }
+
+  .instructions {
+    order: 2;
+    width: 100%;
+  }
+
+  .container {
+    order: 1;
+    max-height: unset;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+  }
+
+  .tabs {
+    flex-direction: column;
+  }
+
+  .tab-button {
+    width: 100%;
+  }
+}

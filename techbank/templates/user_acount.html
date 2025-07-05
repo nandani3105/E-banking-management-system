@@ -1,0 +1,66 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>User Dashboard</title>
+    <link rel="stylesheet" href="{% static 'user_acount.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Welcome to TechBank</h1>
+        <nav>
+            <ul> 
+                <li><a href="{% url 'netbanking' %}">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>Available Services</h2>
+            <div class="services">
+                <div class="service-box">
+                    <h3>Check Balance</h3>
+                    <p>View your current account balance instantly.</p>
+                    <button><a href="/check_balance" class="btn">Go</a></button>
+                </div>
+                <div class="service-box">
+                    <h3>Transfer Money</h3>
+                    <p>Send money to any account securely.</p>
+                    <button><a href="{% url 'transaction' %}" class="btn-link">Go</a></button>
+                </div>
+                <div class="service-box">
+                    <h3>Transaction History</h3>
+                    <p>Review all your past transactions.</p>
+                    <button><a href="{% url 'transaction_list' %}" class="btn-link">Go</a></button>
+                </div>
+                <div class="service-box">
+                    <h3>My Profile</h3>
+                    <p>View and update your personal information.</p>
+                    <button><a href="{% url 'user_profile' %}" class="btn-link">Go</a></button>
+                </div>
+                <div class="service-box">
+                    <h3>Customer Support</h3>
+                    <p>Need help? Reach out to our support team.</p>
+                    <button><a href="{% url 'support' %}" class="btn-link">Contact</a></button>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+    <div class="footer2">
+        <span>Created by <a>TECH BANK</a> | 2025 All rights reserved.</span>
+    </div>
+</footer>
+<script>
+    // Prevent browser back navigation
+    history.pushState(null, null, location.href);
+    window.onpopstate = function () {
+        history.go(1);
+    };
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Life Insurance Application Form</title>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing:border-box;
+    }
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #f1f1f1;
+    /* padding: 40px;*/
+} 
+/* Navbar */
+nav {
+    background-color:#03045e;
+    padding:10px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-brand .navbar-logo {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.navbar-logo span {
+    color: #00b4d8;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    padding: 8px 12px;
+    transition: background 0.3s ease;
+}
+
+nav ul li a:hover {
+    /* background-color: #f3f5f7;
+    color: #000;
+    border-radius: 25px; */
+    color: #90e0ef;
+}
+
+.container {
+    min-height: 600px;
+    max-width: 610px;
+    background: white;
+    margin:10px auto;
+    padding: 30px 40px;
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+
+h2 {
+    text-align: center;
+    color: #2c3e50;
+}
+
+form label {
+    font-weight: 600;
+    display: block;
+    margin-top: 20px;
+}
+
+form input, form select, form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 6px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+.section {
+    margin-top: 30px;
+}
+
+button {
+
+    background-color: #2c3e50;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    margin-top: 25px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #1a252f;
+}
+</style>
+</head>
+<body>
+    <nav>
+        <div class="navbar-brand">
+                <a href="home" class="navbar-logo">TECH <span>BANK</span></a>
+        </div>
+        <ul>
+            <li><a href="user_app">User Page</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/support">Support</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <h2>Life Insurance Application Form</h2>
+        <form method="POST" action="{% url 'life_insurance_form' %}">
+            {% csrf_token %}
+            <div class="section">
+                <label for="fullname">Full Name *</label>
+                <input type="text" id="fullname" name="fullname" required>
+
+                <label for="dob">Date of Birth *</label>
+                <input type="date" id="dob" name="dob" required>
+
+                <label for="gender">Gender *</label>
+                <select id="gender" name="gender" required>
+                    <option value="">--Select--</option>
+                    <option>Male</option>
+                    <option>Female</option>
+                    <option>Other</option>
+                </select>
+
+                <label for="marital_status">Marital Status *</label>
+                <select id="marital_status" name="marital_status" required>
+                    <option value="">--Select--</option>
+                    <option>Single</option>
+                    <option>Married</option>
+                    <option>Divorced</option>
+                    <option>Widowed</option>
+                </select>
+            </div>
+
+            <!-- Contact Information -->
+            <div class="section">
+                <label for="email">Email *</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="phone">Phone Number *</label>
+                <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" required>
+
+                <label for="address">Address *</label>
+                <textarea id="address" name="address" rows="3" required></textarea>
+            </div>
+
+            <!-- Identification -->
+            <div class="section">
+                <label for="id_type">ID Type *</label>
+                <select id="id_type" name="id_type" required>
+                    <option value="">--Select--</option>
+                    <option>Aadhar Card</option>
+                    <option>PAN Card</option>
+                    <option>Voter ID</option>
+                    <option>Driving License</option>
+                </select>
+
+                <label for="id_number">ID Number *</label>
+                <input type="text" id="id_number" name="id_number" required>
+            </div>
+
+            <!-- Nominee Details -->
+            <div class="section">
+                <label for="nominee_name">Nominee Full Name *</label>
+                <input type="text" id="nominee_name" name="nominee_name" required>
+
+                <label for="relationship">Relationship *</label>
+                <input type="text" id="relationship" name="relationship" required>
+
+                <label for="nominee_contact">Nominee Contact Number *</label>
+                <input type="tel" id="nominee_contact" name="nominee_contact" pattern="[0-9]{10}" required>
+            </div>
+
+            <!-- Plan Selection -->
+            <div class="section">
+                <label for="plan">Select Insurance Plan *</label>
+                <select id="plan" name="plan" required>
+                    <option value="">--Select--</option>
+                    <option>Term Plan</option>
+                    <option>Whole Life Plan</option>
+                    <option>Endowment Plan</option>
+                    <option>ULIP</option>
+                </select>
+
+                <label>
+                    <input type="checkbox" name="declaration" required>
+                    I hereby declare that the information provided is true to the best of my knowledge.
+                </label>
+            </div>
+
+            <button type="submit" class="submit-btn">Submit Application</button>
+        </form>
+    </div>
+</body>
+</html>

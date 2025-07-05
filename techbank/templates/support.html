@@ -1,0 +1,53 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Support</title>
+  <link rel="stylesheet" href="static/support.css" />
+</head>
+<body>
+  <nav>
+        <div class="navbar-brand">
+                <a href="#" class="navbar-logo">TECH <span>BANK</span></a>
+        </div>
+        <ul>
+            <li><a href="user_app">User Page</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/support">Support</a></li>
+        </ul>
+  </nav>
+  <div class="support-container">
+    <h2>Customer Support</h2>
+
+    <!-- Bank Support Information -->
+    <div class="support-info">
+      <p><strong>📞 Toll-Free Number:</strong> 1800-123-4567</p>
+      <p><strong>📧 Email:</strong> support@techbank.com</p>
+      <p><strong>🕘 Working Hours:</strong> Mon – Sat, 9 AM to 6 PM</p>
+      <p><strong>🏦 Head Office:</strong> TechBank Towers, Kolkata, India</p>
+      <p><strong>📋 Escalation Contact:</strong> escalation@techbank.com</p>
+    </div>
+
+    <!-- Support Form -->
+    <form class="support-form">
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" required />
+
+      <label for="issue">Issue</label>
+      <textarea id="issue" name="issue" rows="5" placeholder="Describe your issue..."></textarea>
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required />
+
+      <button type="submit">Submit Request</button>
+    </form>
+  </div>
+</body>
+<footer>
+    <div class="footer2">
+        <span>Created by <a>TECH BANK</a> | 2025 All rights reserved.</span>
+    </div>
+</footer>
+</html>

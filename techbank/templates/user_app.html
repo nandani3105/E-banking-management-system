@@ -1,0 +1,91 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="{% static 'user_app.css' %}">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Tech Bank</title>
+    </head>
+    
+<body>
+        <nav class="navbar">
+            <div class="navbar-brand">
+                <a href="home" class="navbar-logo">TECH <span>BANK</span></a>
+            </div>
+                <ul class="navbar-menu">
+                    <li class="navbar-item"><a href="user_app">Home</a></li>
+                    <li class="navbar-item"><a href="#first">About Us</a></li>
+                </ul>
+        </nav>
+    
+        <div class="main">
+            <div class="left-image"></div>
+            <div class="hero" style="background-image: url('home.jpg'); background-size: cover; background-position: center">
+                <h1>Tech<span>Bank</span></h1>
+                <h2>"We are Connecting Peoples From All Over India."</h2>
+                <div class="scroll-container">
+                    <marquee behavior="scroll" direction="left">
+                        Your Multi-Currency Payments, Global Settlements, Currency Exchange, &amp; other needs can be solved by a few lines of code,
+                        allowing you to invest valuable time to further expand your business.
+                    </marquee>
+                </div>
+                <!--<div class="btn">
+                    <button type="button" class="btn"><a href="userpage">User</a></button>
+                    <button type="button" class="btn"><a href="adminpage">Admin</a></button>
+
+                </div>-->
+                <div class="services">
+                    <h3>What You Can Do:</h3>
+                    <div class="service-grid">
+                        <a href="netbanking" class="service-card">
+                        <i class="fas fa-university"></i>
+                        <span>Net Banking Login</span>
+                        </a>
+                        <a href="loan" class="service-card">
+                        <i class="fas fa-hand-holding-usd"></i>
+                        <span>Apply for Loan</span>
+                        </a>
+                        <a href="life" class="service-card">
+                        <i class="fas fa-heartbeat"></i>
+                        <span>Life Insurance</span>
+                        </a>
+                        <a href="health" class="service-card">
+                        <i class="fas fa-stethoscope"></i>
+                        <span>Health Insurance</span>
+                        </a>
+                        <a href="vehicle_insuranceform" class="service-card">
+                        <i class="fas fa-car"></i>
+                        <span>Vehicle Insurance</span>
+                        </a>
+                        <a href="create_acc_request" class="service-card">
+                        <i class="fas fa-user-plus"></i>
+                        <span>Open Account</span>
+                        </a>
+                        <a href="card_apply" class="service-card">
+                        <i class="fas fa-credit-card"></i>
+                        <span>Apply for Card</span>
+                        </a>
+                        <a href="support" class="service-card">
+                        <i class="fas fa-headset"></i>
+                        <span>Customer Support</span>
+                        </a>
+                        <a href="currency_exchange" class="service-card">
+                        <i class="fas fa-exchange-alt"></i>
+                        <span>Currency Exchange</span>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        </body>
+    
+        <footer>
+            <div class="footer2">
+                <span>Created by <a>TECH BANK</a> | 2025 All rights reserved.</span>
+            </div>
+        </footer>     
+        
+</html>

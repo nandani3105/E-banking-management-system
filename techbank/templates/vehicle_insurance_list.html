@@ -1,0 +1,190 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Vehicle Insurance Records</title>
+<link rel="stylesheet" href="#">
+<style>
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #f0f4f8;
+    padding: 20px;
+}
+.navbar {
+    background-color:#03045e;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:5px;
+    
+}
+
+.navbar-brand .navbar-logo {
+    font-size:25px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    padding-left: 10px;
+}
+
+.navbar-brand .navbar-logo span{
+    color:#00b4d8;
+}
+.navbar-menu {
+    list-style: none;
+    display: flex;
+    gap:20px;
+}
+
+.navbar-menu {
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+.navbar-menu a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    font-size:15px;
+}
+
+.navbar-menu a:hover {
+    color: #e8f4f6;
+    text-decoration: underline;
+}
+/*footer*/
+footer {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    background-color:#03045e;
+    color: #fff;
+    text-align: center;
+    width: 100%;
+    margin-top: 590px;
+}
+.footer1 a {
+    color: #fff;
+    text-decoration: none;
+    font-size:15px;
+    font-weight:500;
+    padding: 20px 20px;
+}
+
+.footer2 span {
+    color: #fff;
+    font-size:20px;
+    font-weight:500;
+    text-decoration: none;
+    padding-top:20px ;
+}
+
+h1 {
+    text-align: center;
+    color: #003366;
+    margin-bottom: 20px;
+}
+
+table {
+    width:90%;
+    border-collapse: collapse;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+th, td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+th {
+    background: #003366;
+    color: white;
+}
+
+tr:hover {
+    background-color: #f1f1f1;
+}
+
+img {
+    max-height: 60px;
+    border-radius: 4px;
+}
+
+</style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-brand">
+                <a href="#" class="navbar-logo">TECH <span>BANK</span></a>
+        </div>
+        <ul class="navbar-menu">
+            <li><a href="Admin_page">Admin </a></li>
+        </ul>
+    </nav>
+    <h1>Vehicle Insurance Records</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Owner Name</th>
+                <th>Vehicle Type</th>
+                <th>Manufacturer</th>
+                <th>Model</th>
+                <th>Registration</th>
+                <th>Year</th>
+                <th>Fuel Type</th>
+                <th>Aadhar</th>
+                <th>Aadhar Photo</th>
+                <th>PAN</th>
+                <th>PAN Photo</th>
+                <th>Vehicle Photo</th>
+                <th>Insurance Type</th>
+                <th>Duration (Years)</th>
+                <th>Submitted At</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for v in v_insurances %}
+            <tr>
+                <td>{{ v.owner_name }}</td>
+                <td>{{ v.vehicle_type }}</td>
+                <td>{{ v.manufacturer }}</td>
+                <td>{{ v.model }}</td>
+                <td>{{ v.registration }}</td>
+                <td>{{ v.registration_year }}</td>
+                <td>{{ v.fuel_type }}</td>
+                <td>{{ v.aadhar }}</td>
+                <td>
+                    {% if v.aadhar_photo %}
+                        <img src="{{ v.aadhar_photo.url }}" alt="Aadhar Photo">
+                    {% else %} N/A {% endif %}
+                </td>
+                <td>{{ v.pan }}</td>
+                <td>
+                    {% if v.pan_photo %}
+                        <img src="{{ v.pan_photo.url }}" alt="PAN Photo">
+                    {% else %} N/A {% endif %}
+                </td>
+                <td>
+                    {% if v.vehicle_photo %}
+                        <img src="{{ v.vehicle_photo.url }}" alt="Vehicle Photo">
+                    {% else %} N/A {% endif %}
+                </td>
+                <td>{{ v.insurance_type }}</td>
+                <td>{{ v.duration }}</td>
+                <td>{{ v.submitted_at }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+<!-- <footer>
+    <div class="footer2">
+        <span>Created by <a>TECH BANK</a> | 2025 All rights reserved.</span>
+    </div>
+</footer> -->
+</html>

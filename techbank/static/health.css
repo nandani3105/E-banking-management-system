@@ -1,0 +1,162 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to right, #e0f7fa, #ffffff);
+    color: #333;
+}
+
+/* Navbar */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #004d66;
+  color: white;
+  padding: 10px 30px;
+}
+
+.navbar-logo {
+  text-decoration: none;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.navbar-logo span {
+  color: #00e6e6;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 25px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+nav ul li a:hover {
+  color: #a0f1ff;
+}
+
+/* Container */
+.container {
+    padding: 40px 60px;
+}
+
+/* Header */
+header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+header h1 {
+    font-size: 40px;
+    color: #00695c;
+}
+
+.subtitle {
+    font-size: 18px;
+    color: #555;
+    margin-top: 10px;
+}
+
+/* Plan Cards */
+.plans {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.plan {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.plan:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12);
+}
+
+.plan h2 {
+    color: #004d40;
+    margin-bottom: 15px;
+    font-size: 22px;
+}
+
+.plan p {
+    margin-bottom: 15px;
+    font-size: 15px;
+    color: #444;
+}
+
+.plan ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.plan ul li {
+    margin-bottom: 10px;
+    padding-left: 20px;
+    position: relative;
+}
+
+.plan ul li::before {
+    content: "✔";
+    position: absolute;
+    left: 0;
+    color: #00897b;
+    font-weight: bold;
+}
+
+/* Apply Button */
+.btn {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.btn-link {
+    background-color: #00897b;
+    color: white;
+    padding: 14px 32px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.btn-link:hover {
+    background-color: #00695c;
+    transform: scale(1.05);
+}
+
+/* Footer */
+/* Footer */
+footer {
+    background: #004d66;
+    color: white;
+    padding: 15px 0;
+    text-align: center;
+    font-size: 14px;
+    margin-top:90px;
+}
+
+.footer2 a {
+    color: #a1e5e1;
+    text-decoration: none;
+    font-weight: bold;
+}

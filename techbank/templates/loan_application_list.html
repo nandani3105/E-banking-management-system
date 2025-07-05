@@ -1,0 +1,133 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Loan Applications</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f3f6f9;
+            padding: 20px;
+        }
+        .navbar {
+            background-color:#03045e;
+            color: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding:5px;
+            
+        }
+
+        .navbar-brand .navbar-logo {
+            font-size:25px;
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            padding-left: 10px;
+        }
+
+        .navbar-brand .navbar-logo span{
+            color:#00b4d8;
+        }
+        .navbar-menu {
+            list-style: none;
+            display: flex;
+            gap:20px;
+        }
+
+        .navbar-item {
+            margin-left: 30px;
+            padding-right:30px ;
+        }
+
+        .navbar-item a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            font-size:15px;
+        }
+
+        .navbar-item a:hover {
+            color:#00b4d8;
+            /* text-decoration: underline; */
+        }
+        h1 {
+            color: #03045e;
+            margin-bottom: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: #fff;
+        }
+        th, td {
+            border: 1px solid #ccc;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #03045e;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        a.view-link {
+            color: #0077b6;
+            text-decoration: none;
+        }
+        a.view-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+            <div class="navbar-brand">
+                <a href="home" class="navbar-logo">TECH <span>BANK</span></a>
+            </div>
+            <ul class="navbar-menu">
+                <li class="navbar-item"><a href="Admin_page">Back</a></li>
+                
+            </ul>
+    </nav>
+
+    <h1>Submitted Loan Applications</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Loan Type</th>
+                <th>Amount (₹)</th>
+                <th>Duration (Years)</th>
+                <th>Account Number</th>
+                <th>Aadhar</th>
+                <th>PAN</th>
+                <th>Photo</th>
+                <th>Submitted At</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for L in loan_form %}
+            <tr>
+                <td>{{ L.loan_type }}</td>
+                <td>{{ L.amount }}</td>
+                <td>{{ L.duration }}</td>
+                <td>{{ L.account_no }}</td>
+                <td>{{ L.aadhar }}</td>
+                <td>{{ L.pan }}</td>
+                <td><a href="{{ loan.photo.url }}" class="view-link" target="_blank">View</a></td>
+                <td>{{ L.submitted_at }}</td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="8">No loan applications submitted yet.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+</body>
+</html>

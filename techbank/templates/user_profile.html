@@ -1,0 +1,131 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Account Profile</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f2f6fa;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .profile-container {
+            max-width: 600px;
+            margin: auto;
+            background: #fff;
+            padding: 40px 30px;
+            border-radius: 10px;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 30px;
+        }
+
+        .profile-field {
+            margin-bottom: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .profile-field .label {
+            font-weight: bold;
+            color: #444;
+            margin-bottom: 5px;
+        }
+
+        .profile-field .value {
+            font-size: 16px;
+            color: #222;
+        }
+
+        .profile-photo {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .profile-photo img {
+            width: 180px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="profile-container">
+        <h2>User Account Profile</h2>
+
+
+
+        <div class="profile-photo">
+            <div class="label">User Photo:</div>
+            {% if user.photo %}
+                <img src="{{ user.photo.url }}" alt="User Photo">
+            {% else %}
+                <p>No photo uploaded.</p>
+            {% endif %}
+        </div>
+
+        <div class="profile-field">
+            <div class="label">Full Name:</div>
+            <div class="value">{{ user.fullname }}</div>
+        </div>
+
+        <div class="profile-field">
+            <div class="label">Email:</div>
+            <div class="value">{{ user.email }}</div>
+        </div>
+
+        <div class="profile-field">
+            <div class="label">Phone:</div>
+            <div class="value">{{ user.phone }}</div>
+        </div>
+
+        <div class="profile-field">
+            <div class="label">Nationality:</div>
+            <div class="value">{{ user.nation }}</div>
+        </div>
+
+        <div class="profile-field">
+            <div class="label">Address:</div>
+            <div class="value">{{ user.address }}</div>
+        </div>
+
+        <div class="profile-field">
+            <div class="label">State:</div>
+            <div class="value">{{ user.state }}</div>
+        </div>
+
+        <div class="profile-field">
+            <div class="label">Pincode:</div>
+            <div class="value">{{ user.pincode }}</div>
+        </div>
+
+        <div class="profile-field">
+            <div class="label">Aadhar Number:</div>
+            <div class="value">{{ user.aadhar }}</div>
+        </div>
+
+        <div class="profile-field">
+            <div class="label">PAN Number:</div>
+            <div class="value">{{ user.pan }}</div>
+        </div>
+
+        <div class="profile-field">
+            <div class="label">Account Type Chosen:</div>
+            <div class="value">{{ user.choose }}</div>
+        </div>
+
+        
+
+        
+    </div>
+</body>
+</html>

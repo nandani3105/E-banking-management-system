@@ -1,0 +1,167 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(to right, #c5d0e5, #b4e3de);
+  color: #333;
+  min-height: 100vh;
+}
+
+/* Navigation Bar */
+.navbar {
+  background-color:#03045e;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding:5px;
+    
+}
+
+.navbar-brand .navbar-logo {
+  font-size:25px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.navbar-brand .navbar-logo span{
+  color:#00b4d8;
+}
+.navbar-menu {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+.navbar-item {
+    margin-left: 30px;
+}
+
+.navbar-item a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.navbar-item a:hover {
+  text-decoration: underline;
+}
+
+/*footer*/
+footer {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    background-color:#03045e;
+    color: #fff;
+    text-align: center;
+    width: 100%;
+    margin-top: 400px;
+    padding: 20px;
+    font-size: 14px;
+}
+
+
+.footer1 a {
+    color: #fff;
+    text-decoration: none;
+    font-size:15px;
+    font-weight:500;
+    padding: 20px 20px;
+}
+
+.footer2 span {
+    color: #fff;
+    font-size:20px;
+    font-weight:500;
+    text-decoration: none;
+    padding-top:20px ;
+}
+
+/* Heading */
+h1 {
+  text-align: center;
+  margin-top: 3rem;
+  color: rgb(125, 103, 180);
+}
+
+/* Login Form */
+form {
+  background-color: white;
+  max-width: 400px;
+  margin: 2rem auto;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+label {
+  display: block;
+  margin-top: 1rem;
+  font-weight: bold;
+}
+
+.navbar .navbar-menu button{
+    margin-left: 30px;
+    margin-right:10px;
+    border: none;
+    border-radius:25px;
+    font-size:15px;
+    background: linear-gradient(to right,#00c6ff, #5165cd);
+}
+
+.navbar .navbar-menu button a{
+    text-decoration: none;
+    padding:25px;
+}
+
+.navbar .navbar-menu button:hover{
+    border: 2px solid black;
+    color: #03045e;
+}
+
+input[type="phone"],
+input[type="password"] {
+  width: 100%;
+  padding: 0.75rem;
+  margin-top: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+button {
+  width: 100%;
+  padding: 0.75rem;
+  margin-top: 1.5rem;
+  background-color: #0072ff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background-color: #005bb5;
+}
+
+/* Message Styling */
+ul {
+  max-width: 400px;
+  margin: 1rem auto;
+  padding: 0;
+  list-style-type: none;
+  text-align: center;
+}
+
+li {
+  color: red;
+  font-weight: bold;
+}
